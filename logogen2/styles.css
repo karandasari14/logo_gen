@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Rye&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.image-generator {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #121212;
+}
+
+.image-generator .content {
+  text-align: center;
+  max-width: 760px;
+}
+
+.image-generator h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #9b59ff;
+}
+
+.image-generator p {
+  margin-top: 10px;
+  font-size: 1.35rem;
+  color: #c0c0c0;
+}
+
+.generate-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 45px;
+}
+
+.form-controls {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+  background: #1e1e1e;
+  padding: 8px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(155, 89, 255, 0.8);
+}
+
+.form-controls .prompt-input {
+  flex: 1;
+  padding: 10px 17px;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  color: #fff;
+  outline: none;
+}
+
+.form-controls .img-quantity {
+  border: none;
+  background: #292929;
+  font-size: 1rem;
+  color: #9b59ff;
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
+}
+
+.generate-btn {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  background: #9b59ff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 15px rgba(155, 89, 255, 0.8);
+}
+
+.generate-btn:hover {
+  background: #b87bff;
+  box-shadow: 0 0 25px rgba(155, 89, 255, 1);
+}
+
+.image-gallery {
+  display: flex;
+  gap: 15px;
+  padding: 0 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px auto;
+  max-width: 1250px;
+}
+
+.image-gallery .img-card {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  width: 285px;
+  box-shadow: 0 0 20px rgba(155, 89, 255, 0.5);
+}
+
+.image-gallery .img-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.download-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  background: #9b59ff;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 15px rgba(155, 89, 255, 0.8);
+}
+
+.download-btn i {
+  font-size: 18px;
+}
+
+.download-btn:hover {
+  background: #b87bff;
+  box-shadow: 0 0 25px rgba(155, 89, 255, 1);
+  transform: scale(1.1);
+}
+
+#head {
+  font-family: "Lobster", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: xx-large;
+  text-align: center;
+  color: white;
+  margin-top: 20px; /* Adds space above LogoCraft */
+  display: block;
+}
+
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(155, 89, 255, 0.3);
+  border-top-color: #9b59ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.image-gallery .img-card.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e1e1e;
+  width: 285px;
+  height: 285px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(155, 89, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .form-controls {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .form-controls .prompt-input,
+  .form-controls .img-quantity {
+    width: 100%;
+    text-align: center;
+  }
+
+  .generate-btn {
+    width: 100%;
+  }
+
+  .image-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-gallery .img-card {
+    width: 90%;
+    max-width: 300px;
+  }
+}
